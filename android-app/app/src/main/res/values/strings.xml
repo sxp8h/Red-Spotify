@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Red Spotify</string>
+    <string name="main_password_text">Password:</string>
+    <string name="main_email_text">Email:</string>
+    <string name="main_login_text">Login</string>
+    <string name="red_spotify_logo">Red Spotify logo</string>
+    <string name="save_login">Save login</string>
+</resources>

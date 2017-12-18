@@ -1,0 +1,113 @@
+--------------------------------------------------------
+-- Archivo creado  - martes-diciembre-05-2017   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table RED_USERS
+--------------------------------------------------------
+
+  CREATE TABLE "SYSTEM"."RED_USERS" 
+   (	"ID_USER" NUMBER, 
+	"NAME" VARCHAR2(40 BYTE), 
+	"SURNAME" VARCHAR2(40 BYTE), 
+	"EMAIL" VARCHAR2(255 BYTE), 
+	"PASSWORD" VARCHAR2(18 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+
+   COMMENT ON COLUMN "SYSTEM"."RED_USERS"."ID_USER" IS 'xddd';
+--------------------------------------------------------
+--  DDL for Table RED_ARTISTS
+--------------------------------------------------------
+
+  CREATE TABLE "SYSTEM"."RED_ARTISTS" 
+   (	"ID_ARTIST" VARCHAR2(20 BYTE), 
+	"NAME" VARCHAR2(255 BYTE), 
+	"URL" VARCHAR2(255 BYTE),
+	"NATIONALITY" VARCHAR2(255 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into SYSTEM.RED_USERS
+SET DEFINE OFF;
+Insert into SYSTEM.RED_USERS (ID_USER,NAME,SURNAME,EMAIL,PASSWORD) values ('1','sxp8h','RCabrera','admin@admin.com','1234');
+REM INSERTING into SYSTEM.RED_ARTISTS
+SET DEFINE OFF;
+Insert into SYSTEM.RED_ARTISTS (ID_ARTIST,NAME,URL,NATIONALITY) values ('1','Abel K Kaña','....','ESPAÑA');
+--------------------------------------------------------
+--  DDL for Index RED_USERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYSTEM"."RED_USERS_PK" ON "SYSTEM"."RED_USERS" ("ID_USER") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index RED_ARTISTS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYSTEM"."RED_ARTISTS_PK" ON "SYSTEM"."RED_ARTISTS" ("ID_ARTIST") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Trigger USERS_BIR
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "SYSTEM"."USERS_BIR" 
+BEFORE INSERT ON RED_USERS
+FOR EACH ROW
+
+BEGIN
+  SELECT users_seq.NEXTVAL
+  INTO   :new.id_user
+  FROM   dual;
+END;
+
+/
+ALTER TRIGGER "SYSTEM"."USERS_BIR" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger ARTIST_BIR
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "SYSTEM"."ARTIST_BIR" 
+BEFORE INSERT ON RED_ARTISTS                                                                                          
+FOR EACH ROW                                                                                                          
+
+BEGIN                                                                                                                 
+  SELECT artist_seq.NEXTVAL
+  INTO   :new.id_artist
+  FROM dual;                                                                                                        
+END;
+/
+ALTER TRIGGER "SYSTEM"."ARTIST_BIR" ENABLE;
+--------------------------------------------------------
+--  Constraints for Table RED_USERS
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."RED_USERS" ADD CONSTRAINT "RED_USERS_PK" PRIMARY KEY ("ID_USER")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "SYSTEM"."RED_USERS" MODIFY ("PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."RED_USERS" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."RED_USERS" MODIFY ("SURNAME" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."RED_USERS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."RED_USERS" MODIFY ("ID_USER" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table RED_ARTISTS
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."RED_ARTISTS" ADD CONSTRAINT "RED_ARTISTS_PK" PRIMARY KEY ("ID_ARTIST")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "SYSTEM"."RED_ARTISTS" MODIFY ("URL" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."RED_ARTISTS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."RED_ARTISTS" MODIFY ("ID_ARTIST" NOT NULL ENABLE);

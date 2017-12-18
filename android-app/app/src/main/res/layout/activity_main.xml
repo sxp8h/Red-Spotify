@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ::::::::  :::    ::: :::::::::   ::::::::  :::    :::
+ :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+:
+ +:+         +:+  +:+  +:+    +:+ +:+    +:+ +:+    +:+
+ +#++:++#++   +#++:+   +#++:++#+   +#++:++#  +#++:++#++
+        +#+  +#+  +#+  +#+        +#+    +#+ +#+    +#+
+ #+#    #+# #+#    #+# #+#        #+#    #+# #+#    #+#
+  ########  ###    ### ###         ########  ###    ###
+
+                 -Created by SXP8H-
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context="com.sxp8h.redspotify.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        app:srcCompat="@drawable/spotify"
+        android:contentDescription="@string/red_spotify_logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:labelFor="@+id/edtUser"
+        android:text="@string/main_email_text" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:labelFor="@+id/edtPassword"
+        android:text="@string/main_password_text" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:text="@string/main_login_text" />
+
+    <CheckBox
+        android:id="@+id/checkboxSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save_login" />
+
+</LinearLayout>

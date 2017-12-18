@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ::::::::  :::    ::: :::::::::   ::::::::  :::    :::
+ :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+:
+ +:+         +:+  +:+  +:+    +:+ +:+    +:+ +:+    +:+
+ +#++:++#++   +#++:+   +#++:++#+   +#++:++#  +#++:++#++
+        +#+  +#+  +#+  +#+        +#+    +#+ +#+    +#+
+ #+#    #+# #+#    #+# #+#        #+#    #+# #+#    #+#
+  ########  ###    ### ###         ########  ###    ###
+
+                 -Created by SXP8H-
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="100">
+
+    <ImageView
+        android:id="@+id/imgListLogo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="20"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_launcher_round" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="40"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/txtNacionalidad"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgListBorrar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:id="@+id/imgListModificar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_launcher_round" />
+
+</LinearLayout>

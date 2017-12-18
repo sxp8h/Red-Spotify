@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ::::::::  :::    ::: :::::::::   ::::::::  :::    :::
+ :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+:
+ +:+         +:+  +:+  +:+    +:+ +:+    +:+ +:+    +:+
+ +#++:++#++   +#++:+   +#++:++#+   +#++:++#  +#++:++#++
+        +#+  +#+  +#+  +#+        +#+    +#+ +#+    +#+
+ #+#    #+# #+#    #+# #+#        #+#    #+# #+#    #+#
+  ########  ###    ### ###         ########  ###    ###
+
+                 -Created by SXP8H-
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context="com.sxp8h.redspotify.ListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Name" />
+            <EditText
+                android:id="@+id/txtNombreFiltrar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Nationality" />
+            <EditText
+                android:id="@+id/txtNacionalidadFiltrar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"/>
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imgListCreate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/file_create"/>
+        <ImageView
+            android:id="@+id/imgListFiler"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/file_filter"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="80"
+        android:id="@+id/lstView"
+    />
+
+</LinearLayout>

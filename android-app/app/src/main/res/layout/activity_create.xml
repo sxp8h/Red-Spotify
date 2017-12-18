@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ::::::::  :::    ::: :::::::::   ::::::::  :::    :::
+ :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+:
+ +:+         +:+  +:+  +:+    +:+ +:+    +:+ +:+    +:+
+ +#++:++#++   +#++:+   +#++:++#+   +#++:++#  +#++:++#++
+        +#+  +#+  +#+  +#+        +#+    +#+ +#+    +#+
+ #+#    #+# #+#    #+# #+#        #+#    #+# #+#    #+#
+  ########  ###    ### ###         ########  ###    ###
+
+                 -Created by SXP8H-
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="7"
+    tools:context="com.sxp8h.redspotify.CreateActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Name:"
+    />
+
+    <EditText
+        android:id="@+id/txtCreateName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+    />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Url"
+    />
+
+    <EditText
+        android:id="@+id/txtCreateUrl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+    />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Nationality"
+    />
+
+    <EditText
+        android:id="@+id/txtCreateNationality"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+    />
+
+    <Button
+        android:id="@+id/btnCreateArtist"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Create Artist"
+    />
+</LinearLayout>
